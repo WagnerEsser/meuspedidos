@@ -1,0 +1,199 @@
+html, body {
+    height: 100%;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+header {
+    min-height: 20% !important;
+    padding-top: 2%;
+    border-bottom: 1px solid #d4d4d4;
+    background-color: #f8f8f8;
+}
+
+nav {
+    min-height: 7% !important;
+}
+
+section {
+    min-height: 60% !important;
+}
+
+footer {
+    min-height: 11% !important;
+    padding-top: 1% !important;
+}
+
+.meuspedidos-logo {
+    width: 100%;
+}
+
+.meuspedidos-title, .icon-logo {
+    color: #733695;
+}
+
+.meuspedidos-title:hover {
+    color: #00cd59;
+}
+
+.meuspedidos-icon {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.meuspedidos-icon i {
+    margin: 0 !important;
+}
+
+.meuspedidos-grid {
+    margin-top: 0 !important;
+}
+
+.meuspedidos-grid-message{
+    margin-top: 50px !important;
+}
+
+.meuspedidos-not-segment {
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+.meuspedidos-content {
+    padding-bottom: 1% !important;
+}
+
+.meuspedidos-dropdown {
+    text-align: center !important;
+    padding: 20px 0 10px 0 !important;
+}
+
+.meuspedidos-input-small div {
+    min-width: 8em !important;
+}
+
+.meuspedidos-input-checkbox {
+    margin-top: 0 !important;
+    padding-top: 10px !important;
+    padding-bottom: 8px !important;
+    padding-left: 15px !important;
+    box-shadow: none !important;
+}
+
+.meuspedidos-label-crm{
+    color: red;
+}
+
+.errorlist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.meuspedidos-input-radio {
+    box-shadow: none !important;
+    padding: 0;
+    padding-top: 10px;
+    margin: 0;
+}
+
+.meuspedidos-input-radio ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.meuspedidos-input-radio ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.ui.large.menu {
+    margin-top: 0;
+}
+
+.meuspedidos-proximasConsultas {
+    margin-top: 50px;
+}
+
+.meuspedidos-title-edit-page {
+    text-align: center;
+}
+
+.meuspedidos-page {
+    margin-bottom: 25px !important;
+}
+
+.meuspedidos-segment {
+    margin-top: 20px !important;
+    margin-bottom: 30px !important;
+    padding: 30px 10px 10px 10px !important;
+}
+
+.meuspedidos-segment-border {
+    border-top: 2px solid red !important;
+}
+
+.meuspedidos-table-form {
+    margin: 40px 0 40px 0 !important;
+}
+
+.meuspedidos-div-message {
+    margin-bottom: 20px !important;
+}
+
+.meuspedidos-pagination {
+    margin-bottom: 20px !important;
+}
+
+.meuspedidos-form-filter{
+    margin-top: 40px !important;
+}
+
+.meuspedidos-form-filter-group{
+    display: inline;
+}
+
+.meuspedidos-green{
+    color: green;
+}
+.meuspedidos-red{
+    color: red !important;
+}
+
+.meuspedidos-info-texto{
+    font-size: 16px;
+    text-align: justify;
+    padding: 15px;
+}
+.meuspedidos-margin-rigth{
+    margin-right: 91px !important;
+    margin-bottom: 25px !important;
+}
+div.ten.wide.column.meuspedidos-margin-bottom{
+    margin-bottom: 25px;
+}
+
+input[disabled]{
+    border-color: #aaaaaa !important;
+}
+
+i.search.icon {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
+.meuspedidos-incapaz {
+    font-weight: bold;
+    color: red;
+}
+
+.meuspedidos-button-escolha-papel a{
+    width: 300px !important;
+    height: 80px !important;
+    margin-bottom: 15px !important;
+    line-height: 45px !important;
+}
+
+.border-segment{
+	border-top: 2px solid #6F0017 !important;
+}

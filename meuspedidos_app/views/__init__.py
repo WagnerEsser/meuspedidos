@@ -1,0 +1,1 @@
+from meuspedidos_app.views.index import index
