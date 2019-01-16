@@ -5,7 +5,7 @@
 <head>
     <title>Meus Pedidos</title>
     <meta charset="UTF-8">
-    <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/x-icon"/>
+    <link rel="icon" href="{% static 'images/logo.png' %}" type="image/x-icon"/>
     <link type="text/css" rel="stylesheet" href="{% static 'css/base.css' %}"/>
     <link type="text/css" rel="stylesheet" href="{% static 'css/jquery-ui.css' %}"/>
     <link type="text/css" rel="stylesheet" href="{% static 'semantic/semantic.css' %}"/>
@@ -21,7 +21,7 @@
             <div class="ui grid">
                 <div class="two wide column">
                     <a href="{% url 'index' %}">
-                        <img class="meuspedidos-logo" src="{% static "images/favicon.png" %}" alt="Logo"/>
+                        <img class="meuspedidos-logo" src="{% static "images/logo.png" %}" alt="Logo"/>
                     </a>
                 </div>
                 <div class="eleven wide column">
@@ -37,7 +37,7 @@
                 <div class="three wide column right aligned">
                     <div class="ui grid">
                         <div class="sixteen wide column">
-                            <a href="#">
+                            <a href="{% url 'contato' %}">
                                 <i class="text mail outline icon"></i>
                                 Contato
                             </a>
@@ -53,23 +53,29 @@
     <div class="ui container">
         <a href="{% url 'index' %}" class="item meuspedidos-icon"><i class="icon large home"></i></a>
 
-            <div class="right menu">
-                <div class="ui pointing dropdown link item">
-                    <i class="ui right large user icon"></i>
-                    Nome do usuário
-                    <i class="angle down icon"></i>
-                    <div class="menu">
-                        <a href="#" class="item">
-                            <i class="user icon"></i>
-                            Perfil
-                        </a>
-                        <a href="#" class="item">
-                            <i class="sign out icon"></i>
-                            Sair
-                        </a>
-                    </div>
+        <a href="{% url 'index' %}" class="item meuspedidos-icon">
+            <i class="icon large list"></i> &ensp;Lista de pedidos
+        </a>
+        <a href="#" class="item meuspedidos-icon">
+            <i class="icon large plus"></i> &ensp;Novo pedido
+        </a>
+        <a href="#" class="item meuspedidos-icon">
+            <i class="icon large list"></i> &ensp;Lista de produtos
+        </a>
+
+        <div class="right menu">
+            <div class="ui pointing dropdown link item">
+                <i class="ui right large user icon"></i>
+                Jenifer
+                <i class="angle down icon"></i>
+                <div class="menu">
+                    <a href="#" class="item">
+                        <i class="sign out icon"></i>
+                        Sair
+                    </a>
                 </div>
             </div>
+        </div>
     </div>
 </nav>
 

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block body %}
+
+    <div class="twelve wide column">
+        <br/>
+        <div class="ui grid">
+            <div class="column center aligned">
+                <h1 class="">
+                    <i class="mail icon"></i>
+                    Entre em contato para maiores informações
+                </h1>
+            </div>
+        </div>
+
+        <br/>
+        <br/>
+
+        <div class="ui centered grid">
+            <div class="six wide column">
+                <div class="ui segment center aligned">
+                    <h2 class="ui icon header">
+                        <img src="{% static 'images/logo.png' %}" />
+                    </h2>
+                    <p><i class="mail icon"></i> meuspedidos@email.com</p>
+                    <p><i class="phone icon"></i> (99) 9999-9999</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

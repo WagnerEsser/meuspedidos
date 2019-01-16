@@ -5,10 +5,49 @@
     <div class="ui centered grid meuspedidos-grid">
         <div class="ui row segment meuspedidos-segment border-segment">
 
+            {% if msg %}
+                <div class="sixteen wide column meuspedidos-div-message">
+                    <div class="ui {{ tipo_msg }} message">
+                        <div class="header">
+                            {{ msg }}
+                        </div>
+                    </div>
+                    <br/>
+                </div>
+            {% endif %}
+
             <div class="four wide column">
-                <h1><i class="list icon"></i> Seus Pedidos</h1>
+                <h1><i class="list icon"></i> Pedidos</h1>
             </div>
 
+            <div class="nine wide column"></div>
+
+            <div class="three wide column">
+{#                <a class="ui green button" href="{% url 'novo_pedido' %}">#}
+                <a class="ui green button" href="">
+                    <i class="ui plus icon"></i> Novo pedido
+                </a>
+            </div>
+
+            <div class="sixteen wide column">
+                <div class="ui divider"></div>
+            </div>
+
+            {% if pedidos %}
+                {% for pedido in pedidos %}
+
+
+
+                    <div class="sixteen wide column">
+                        <div class="ui divider"></div>
+                    </div>
+
+                {% endfor %}
+            {% else %}
+                <div class="ui yellow message">
+                    Ainda não existem pedidos cadastrados
+                </div>
+            {% endif %}
         </div>
     </div>
 
