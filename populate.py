@@ -1,7 +1,7 @@
 # coding:utf-8
 import os
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'core.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'meus_pedidos.settings')
 
 import django
 
