@@ -45,15 +45,21 @@ class PedidoView(View):
         return HttpResponseRedirect(reverse('produtos'))
 
     @classmethod
-    def adicionar_item(self, id_produto, id_pedido):
+    def adicionar_item(self, id_pedido, id_produto, preco_pago, qtd):
         pedido = PedidoModel.objects.get(pk=id_pedido)
         produto = ProdutoModel.objects.get(pk=id_produto)
 
         item = ItemModel()
         item.pedido = pedido
         item.produto = produto
-        item.preco = produto.preco_unitario
-        item.quantidade = 1
+        item.preco = preco_pago
+        item.quantidade = qtd
         item.save()
+
+        return HttpResponseRedirect(reverse('produtos'))
+
+    @classmethod
+    def remover_item(self, id_pedido, id_produto):
+        ItemModel.objects.filter(pedido=id_pedido, produto=id_produto).delete()
 
         return HttpResponseRedirect(reverse('produtos'))

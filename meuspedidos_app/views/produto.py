@@ -1,7 +1,7 @@
 # coding:utf-8
 from django.shortcuts import render
 from django.views import View
-from meuspedidos_app.models import ProdutoModel
+from meuspedidos_app.models import ProdutoModel, ItemModel
 from meuspedidos_app.views.pedido import PedidoView
 
 
@@ -20,7 +20,16 @@ class ProdutoView(View):
         return render(request, 'produtos_admin.html', context_dict)
 
     @classmethod
-    def AdicionarProduto(self, request, id):
+    def AdicionarRemoverProduto(self, request):
         if request.session and 'pedido' in request.session:
-            PedidoView.adicionar_item(id, request.session['pedido'])
+            id_pedido = request.session['pedido']
+            id_produto = request.POST.get('id_produto')
+            preco_pago = request.POST.get('preco_pago')
+            qtd = request.POST.get('qtd')
+
+            if ItemModel.objects.filter(pedido=id_pedido, produto=id_produto):
+                PedidoView.remover_item(id_pedido, id_produto)
+            else:
+                PedidoView.adicionar_item(id_pedido, id_produto, preco_pago, qtd)
+
         return self.Listar(request)

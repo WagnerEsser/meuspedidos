@@ -9,69 +9,102 @@
         <div class="ui centered grid meuspedidos-grid">
             <div class="ui row segment meuspedidos-segment border-segment">
 
-                <div class="three wide column"></div>
-
-                <div class="ten wide column">
-                    <div class="meuspedidos-title-edit-page">
-                        <h1><i class="shop icon"></i> Selecione os produtos</h1>
-                        <div class="sub header">
-                            <strong>Pedido em andamento:</strong> # {{ request.session.pedido }}
-                        </div>
-                    </div>
-                </div>
-
-                <div class="three wide column"></div>
-
-                {% if produtos %}
-
-                    <table class="ui very compact table meuspedidos-table-form">
-                        <thead>
-                        <tr>
-                            <th>ID Produto</th>
-                            <th>Nome</th>
-                            <th>Preço unitário</th>
-                            <th>Multiplo</th>
-                            <th><i class="cogs icon"></i> Ações</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {% for produto in produtos %}
-                            <tr>
-                                <td>{{ produto.id }}</td>
-                                <td>{{ produto.nome }}</td>
-                                <td>{{ produto.preco_unitario }}</td>
-                                <td>{{ produto.multiplo }}</td>
-                                <td>
-                                    {% if not produto.id|item_esta_no_pedido %}
-                                        <a class="ui labeled icon primary button"
-                                           href="{% url 'add_produto' produto.id %}">
-                                            <i class="shop icon"></i>
-                                            Adicionar
-                                        </a>
-                                    {% else %}
-                                        <a class="ui labeled icon button"
-                                           href="#">
-                                            <i class="trash icon"></i>
-                                            Remover
-                                        </a>
-                                    {% endif %}
-                                </td>
-                            </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
-
-                {% else %}
+                {% if not request.session.pedido %}
                     <div class="sixteen wide column issem-div-message center aligned">
-                        <br/>
-                        <div class="ui yellow message">
+                        <div class="ui warning message">
                             <div class="header">
-                                Não existem produtos cadastrados
+                                Não existe pedido em andamento!
+                            </div>
+                        </div>
+                        <br/>
+                    </div>
+                {% else %}
+                    <div class="three wide column"></div>
+
+                    <div class="ten wide column">
+                        <div class="meuspedidos-title-edit-page">
+                            <h1><i class="shop icon"></i> Selecione os produtos</h1>
+                            <div class="sub header">
+                                <strong>Pedido em andamento:</strong> # {{ request.session.pedido }}
                             </div>
                         </div>
                     </div>
-                {% endif %}
 
+                    <div class="three wide column">
+                        {#                        <a class="ui green button" href="{% url 'finalizar_pedido' %}">#}
+                        <a class="ui green button" href="#">
+                            <i class="ui shopping basket icon"></i> Finalizar pedido
+                        </a>
+                    </div>
+
+                    {% if produtos %}
+
+                        <table class="ui very compact table meuspedidos-table-form">
+                            <thead>
+                            <tr>
+                                <th>ID Produto</th>
+                                <th>Nome</th>
+                                <th>Preço unitário</th>
+                                <th>Preço a pagar</th>
+                                <th>Multiplo</th>
+                                <th>Quantidade</th>
+                                <th><i class="cogs icon"></i> Ações</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for produto in produtos %}
+                                <form class="ui form" name="ProdutoForm" method="post"
+                                      action="{% url 'add_remove_produto' %}">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="id_produto" value="{{ produto.id }}"/>
+
+                                    <tr>
+                                        <td>{{ produto.id }}</td>
+                                        <td>{{ produto.nome }}</td>
+                                        <td>{{ produto.preco_unitario }}</td>
+                                        <td>
+                                            <div class="ui input">
+                                                <input type="text" name="preco_pago"
+                                                       value="{{ produto.preco_unitario }}"/>
+                                            </div>
+                                        </td>
+                                        <td>{{ produto.multiplo }}</td>
+                                        <td>
+                                            <div class="ui input">
+                                                <input type="text" name="qtd" value="1"/>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            {% if not produto.id|item_esta_no_pedido %}
+                                                <button type="submit" class="ui labeled icon primary button">
+                                                    <i class="shop icon"></i>
+                                                    Adicionar
+                                                </button>
+                                            {% else %}
+                                                <button type="submit" class="ui labeled icon button">
+                                                    <i class="trash icon"></i>
+                                                    Remover
+                                                </button>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                </form>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+
+                    {% else %}
+                        <div class="sixteen wide column issem-div-message center aligned">
+                            <br/>
+                            <div class="ui yellow message">
+                                <div class="header">
+                                    Não existem produtos cadastrados
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+
+                {% endif %}
             </div>
         </div>
     </div>
