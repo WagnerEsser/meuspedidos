@@ -12,6 +12,8 @@
         <div class="ui centered grid meuspedidos-grid">
             <div class="ui row segment meuspedidos-segment border-segment">
 
+                {% include "blocos/mensagem_topo_pagina.html" %}
+
                 {% if not request.session.pedido %}
                     <div class="sixteen wide column issem-div-message center aligned">
                         <div class="ui warning message">
