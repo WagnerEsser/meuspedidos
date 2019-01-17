@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 
 {% load item_esta_no_pedido %}
+{% load mostrar_qtd_a_comprar %}
+{% load mostrar_valor_a_pagar %}
+{% load mostrar_valor_total %}
 
 {% block body %}
 
@@ -62,16 +65,25 @@
                                         <td>{{ produto.nome }}</td>
                                         <td>{{ produto.preco_unitario }}</td>
                                         <td>
-                                            <div class="ui input">
-                                                <input type="text" name="preco_pago"
-                                                       value="{{ produto.preco_unitario }}"/>
-                                            </div>
+                                            {% if not produto.id|item_esta_no_pedido %}
+                                                <div class="ui input">
+                                                    <input type="text" name="preco_pago"
+                                                           value="{{ produto.preco_unitario }}"/>
+                                                </div>
+                                            {% else %}
+                                                {{ produto.id|mostrar_valor_a_pagar }}
+                                                | Total: <strong>{{ produto.id|mostrar_valor_total }}</strong>
+                                            {% endif %}
                                         </td>
                                         <td>{{ produto.multiplo }}</td>
                                         <td>
-                                            <div class="ui input">
-                                                <input type="text" name="qtd" value="1"/>
-                                            </div>
+                                            {% if not produto.id|item_esta_no_pedido %}
+                                                <div class="ui input">
+                                                    <input type="text" name="qtd" value="1"/>
+                                                </div>
+                                            {% else %}
+                                                {{ produto.id|mostrar_qtd_a_comprar }}
+                                            {% endif %}
                                         </td>
                                         <td>
                                             {% if not produto.id|item_esta_no_pedido %}
