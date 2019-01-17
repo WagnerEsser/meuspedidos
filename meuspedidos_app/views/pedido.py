@@ -63,3 +63,14 @@ class PedidoView(View):
         ItemModel.objects.filter(pedido=id_pedido, produto=id_produto).delete()
 
         return HttpResponseRedirect(reverse('produtos'))
+
+    @classmethod
+    def FinalizarPedido(self, request):
+        if request.session and 'pedido' in request.session:
+            id_pedido = request.session['pedido']
+            pedido = PedidoModel.objects.get(pk=id_pedido)
+            pedido.status = True
+            pedido.save()
+            del request.session['pedido']
+
+        return HttpResponseRedirect(reverse('index'))

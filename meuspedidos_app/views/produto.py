@@ -27,6 +27,10 @@ class ProdutoView(View):
             preco_pago = request.POST.get('preco_pago')
             qtd = request.POST.get('qtd')
 
+            from decimal import Decimal
+            preco_pago = Decimal(preco_pago.replace(',', ''))
+            qtd = int(qtd)
+
             if ItemModel.objects.filter(pedido=id_pedido, produto=id_produto):
                 PedidoView.remover_item(id_pedido, id_produto)
             else:
