@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% load item_esta_no_pedido %}
+
+{% block body %}
+
+    <div class="ui container meuspedidos-content">
+
+        <div class="ui centered grid meuspedidos-grid">
+            <div class="ui row segment meuspedidos-segment border-segment">
+
+                <div class="three wide column"></div>
+
+                <div class="ten wide column">
+                    <div class="meuspedidos-title-edit-page">
+                        <h1><i class="shop icon"></i> Selecione os produtos</h1>
+                        <div class="sub header">
+                            <strong>Pedido em andamento:</strong> # {{ request.session.pedido }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="three wide column"></div>
+
+                {% if produtos %}
+
+                    <table class="ui very compact table meuspedidos-table-form">
+                        <thead>
+                        <tr>
+                            <th>ID Produto</th>
+                            <th>Nome</th>
+                            <th>Preço unitário</th>
+                            <th>Multiplo</th>
+                            <th><i class="cogs icon"></i> Ações</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for produto in produtos %}
+                            <tr>
+                                <td>{{ produto.id }}</td>
+                                <td>{{ produto.nome }}</td>
+                                <td>{{ produto.preco_unitario }}</td>
+                                <td>{{ produto.multiplo }}</td>
+                                <td>
+                                    {% if not produto.id|item_esta_no_pedido %}
+                                        <a class="ui labeled icon primary button"
+                                           href="{% url 'add_produto' produto.id %}">
+                                            <i class="shop icon"></i>
+                                            Adicionar
+                                        </a>
+                                    {% else %}
+                                        <a class="ui labeled icon button"
+                                           href="#">
+                                            <i class="trash icon"></i>
+                                            Remover
+                                        </a>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+
+                {% else %}
+                    <div class="sixteen wide column issem-div-message center aligned">
+                        <br/>
+                        <div class="ui yellow message">
+                            <div class="header">
+                                Não existem produtos cadastrados
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

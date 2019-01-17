@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+    <div class="ui centered grid meuspedidos-grid">
+        <div class="ui row segment meuspedidos-segment border-segment">
+
+            {% include 'blocos/mensagem_topo_pagina.html' %}
+
+            {% include 'blocos/verifica_pedido.html' %}
+
+            {% if not request.session.pedido %}
+                <div class="three wide column"></div>
+
+                <div class="ten wide column">
+                    <div class="meuspedidos-title-edit-page">
+                        {% if not id %}
+                            <h1><i class="plus icon"></i> Novo pedido</h1>
+                        {% else %}
+                            <h1><i class="plus icon"></i> Edição do pedido # {{ id }}</h1>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="three wide column"></div>
+
+                <div class="sixteen wide column meuspedidos-table-form">
+                    {% if not id %}
+                        <form class="ui form" id="PedidoForm" method="post" action="{% url 'novo_pedido' %}">
+                    {% else %}
+                        {#                    <form class="ui form" id="" method="post" action="">#}
+                    {% endif %}
+
+                    {% csrf_token %}
+
+                    {% if not id %}
+                        <input type="hidden" name="id" value="">
+                    {% else %}
+                        <input type="hidden" name="id" value="{{ id }}">
+                    {% endif %}
+
+                    <div class="fields">
+                        <div class="six wide field"></div>
+                        <div class="four wide field centered">
+                            <label>Selecione para qual cliente será o pedido</label>
+                            {{ form.cliente }}
+                            {% if form.cliente.errors %}
+                                <div class="ui pointing red basic label">
+                                    {{ form.cliente.errors }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="six wide field"></div>
+
+                    <br/>
+                    <div class="ui centered grid">
+                        <div class="ui column centered row">
+                            <input type="submit" name="submit" class="ui submit button green" value="Iniciar pedido"/>
+                        </div>
+                    </div>
+
+                    </form>
+
+                </div>
+
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}

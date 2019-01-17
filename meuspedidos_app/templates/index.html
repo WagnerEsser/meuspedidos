@@ -1,20 +1,15 @@
 {% extends 'base.html' %}
 
+{% load status_pedido %}
+
 {% block body %}
 
     <div class="ui centered grid meuspedidos-grid">
         <div class="ui row segment meuspedidos-segment border-segment">
 
-            {% if msg %}
-                <div class="sixteen wide column meuspedidos-div-message">
-                    <div class="ui {{ tipo_msg }} message">
-                        <div class="header">
-                            {{ msg }}
-                        </div>
-                    </div>
-                    <br/>
-                </div>
-            {% endif %}
+            {% include 'blocos/mensagem_topo_pagina.html' %}
+
+            {% include 'blocos/verifica_pedido.html' %}
 
             <div class="four wide column">
                 <h1><i class="list icon"></i> Pedidos</h1>
@@ -23,10 +18,11 @@
             <div class="nine wide column"></div>
 
             <div class="three wide column">
-{#                <a class="ui green button" href="{% url 'novo_pedido' %}">#}
-                <a class="ui green button" href="">
-                    <i class="ui plus icon"></i> Novo pedido
-                </a>
+                {% if not request.session.pedido %}
+                    <a class="ui green button" href="{% url 'novo_pedido' %}">
+                        <i class="ui plus icon"></i> Novo pedido
+                    </a>
+                {% endif %}
             </div>
 
             <div class="sixteen wide column">
@@ -34,15 +30,43 @@
             </div>
 
             {% if pedidos %}
-                {% for pedido in pedidos %}
+                <div class="sixteen wide column">
+                    <i class="list icon"></i> <strong>Pedidos</strong>
+                    <table class="ui celled table">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Cliente</th>
+                            <th>Data</th>
+                            <th>Status</th>
+                            <th><i class="settings icon"></i> Ações</th>
+                        </tr>
+                        </thead>
+                        <tbody>
 
+                        {% for pedido in pedidos %}
+                            <tr>
+                                <td># {{ pedido.id }}</td>
+                                <td>{{ pedido.cliente }}</td>
+                                <td>{{ pedido.data }}</td>
+                                <td>{{ pedido.status|status_pedido }}</td>
+                                <td>
+                                    {% if not pedido.status %}
+                                        <a href="{% url 'produtos' %}" class="ui primary button">
+                                            <i class="shop icon"></i> Continuar pedido
+                                        </a>
+                                    {% else %}
+                                        ---
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
 
-
-                    <div class="sixteen wide column">
-                        <div class="ui divider"></div>
-                    </div>
-
-                {% endfor %}
+                <div class="sixteen wide column">
+                    <div class="ui divider"></div>
+                </div>
             {% else %}
                 <div class="ui yellow message">
                     Ainda não existem pedidos cadastrados

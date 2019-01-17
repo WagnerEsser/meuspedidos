@@ -1,0 +1,10 @@
+{% if request.session.pedido %}
+    <div class="sixteen wide column issem-div-message center aligned">
+        <div class="ui info message">
+            <div class="header">
+                O pedido de ID # {{ request.session.pedido }} está em andamento.
+            </div>
+        </div>
+        <br/>
+    </div>
+{% endif %}

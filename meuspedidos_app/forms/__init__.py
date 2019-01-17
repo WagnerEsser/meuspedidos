@@ -1,0 +1,1 @@
+from meuspedidos_app.forms.pedido import PedidoCadForm

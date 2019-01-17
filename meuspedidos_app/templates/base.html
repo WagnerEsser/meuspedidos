@@ -56,11 +56,16 @@
         <a href="{% url 'index' %}" class="item meuspedidos-icon">
             <i class="icon large list"></i> &ensp;Lista de pedidos
         </a>
-        <a href="#" class="item meuspedidos-icon">
+        {% if request.session.pedido %}
+            <a href="{% url 'produtos' %}" class="item meuspedidos-icon">
+                <i class="icon large shop"></i> &ensp;Continuar pedido
+            </a>
+        {% endif %}
+        <a href="{% url 'novo_pedido' %}" class="item meuspedidos-icon">
             <i class="icon large plus"></i> &ensp;Novo pedido
         </a>
-        <a href="#" class="item meuspedidos-icon">
-            <i class="icon large list"></i> &ensp;Lista de produtos
+        <a href="{% url 'lista_produtos' %}" class="item meuspedidos-icon">
+            <i class="icon large list"></i> &ensp;Estoque
         </a>
 
         <div class="right menu">
@@ -80,7 +85,7 @@
 </nav>
 
 <section>
-    <div class="ui container meuspedidos-content">
+    <div class="ui container meuspedidosr-content">
         {% block body %}
         {% endblock %}
     </div>

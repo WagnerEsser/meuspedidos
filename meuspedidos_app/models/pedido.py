@@ -7,17 +7,14 @@ class PedidoModel(models.Model):
     itens = models.ManyToManyField(ProdutoModel, through='ItemModel')
     cliente = models.ForeignKey(ClienteModel, on_delete=models.CASCADE)
     data = models.DateTimeField(auto_now_add=True)
-    finalizado = models.BooleanField(default=False)
-    # trocar para status ABERTO ou FECHADO
+    status = models.BooleanField(default=False, choices=((0, 'Aberto'), (1, 'Fechado')))
 
-    def get_or_none(id):
-        try:
-            return PedidoModel.objects.get(pk=id)
-        except:
-            return None
+    def __unicode__(self):
+        return '%s %s em %s' % (self.cliente.nome, self.cliente.sobrenome, self.data.strftime(u'%d/%m/%Y em %H:%M'))
 
     def __str__(self):
         return '%s %s em %s' % (self.cliente.nome, self.cliente.sobrenome, self.data.strftime(u'%d/%m/%Y em %H:%M'))
 
     class Meta:
+        verbose_name = 'Pedido'
         verbose_name_plural = 'Pedidos'
