@@ -27,12 +27,12 @@ class ProdutoView(View):
             id_pedido = request.session['pedido']
             id_produto = request.POST.get('id_produto')
             produto = ProdutoModel.objects.get(pk=id_produto)
-            preco_pago = request.POST.get('preco_pago')
             qtd = request.POST.get('qtd')
 
             if ItemModel.objects.filter(pedido=id_pedido, produto=id_produto):
                 PedidoView.remover_item(id_pedido, id_produto)
             else:
+                preco_pago = request.POST.get('preco_pago')
                 from decimal import Decimal
                 preco_pago = Decimal(preco_pago.replace(',', ''))
 
