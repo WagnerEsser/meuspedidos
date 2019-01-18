@@ -5,6 +5,8 @@ from django.views.generic.base import View
 from django.shortcuts import render
 from meuspedidos_app.forms import PedidoCadForm
 from meuspedidos_app.models import ProdutoModel, PedidoModel, ItemModel
+from meuspedidos_app.views.index import index
+from meuspedidos_app.views.funcoes import *
 
 
 class PedidoView(View):
@@ -49,9 +51,6 @@ class PedidoView(View):
         pedido = PedidoModel.objects.get(pk=id_pedido)
         produto = ProdutoModel.objects.get(pk=id_produto)
 
-        print(type(preco_pago))
-        print(preco_pago)
-
         item = ItemModel()
         item.pedido = pedido
         item.produto = produto
@@ -72,8 +71,30 @@ class PedidoView(View):
         if request.session and 'pedido' in request.session:
             id_pedido = request.session['pedido']
             pedido = PedidoModel.objects.get(pk=id_pedido)
+
+            self.remover_itens_nao_rentaveis(id_pedido)
+
             pedido.status = True
             pedido.save()
             del request.session['pedido']
+            msg = "Pedido realizado com sucesso"
+            tipo_msg = "green"
+        else:
+            msg = "Algo deu errado, tente novamente!"
+            tipo_msg = "red"
 
-        return HttpResponseRedirect(reverse('index'))
+        return index(request, msg, tipo_msg)
+
+    @classmethod
+    def remover_itens_nao_rentaveis(self, id_pedido):
+        itens = ItemModel.objects.filter(pedido=id_pedido)
+
+        for item in itens:
+            produto = ProdutoModel.objects.get(pk=item.produto.pk)
+            preco_unitario_produto = remover_ponto_decimal(produto.preco_unitario)
+            preco_pago = remover_zeros_final(item.preco)
+
+            if verificar_rentabilidade(preco_unitario_produto, preco_pago) == 0:
+                item.delete()
+
+        return
