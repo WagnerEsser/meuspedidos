@@ -11,10 +11,19 @@ from meuspedidos_app.views.pedido import PedidoView
 class ProdutoView(View):
 
     @classmethod
-    def Listar(self, request, msg=None, tipo_msg=None):
+    def Listar(self, request, msg=None, tipo_msg=None, id=None):
+
+        if id:
+            template = 'pedido_edit.html'
+            request.session['pedido_edit'] = id
+            id_pedido = id
+        else:
+            template = 'produtos.html'
+            id_pedido = request.session['pedido']
+
         context_dict = {}
         existe_item_pedido = False
-        itens = ItemModel.objects.filter(pedido=request.session['pedido'])
+        itens = ItemModel.objects.filter(pedido=id_pedido)
 
         if itens:
             for item in itens:
@@ -29,7 +38,7 @@ class ProdutoView(View):
         context_dict['produtos'] = ProdutoModel.objects.all().order_by('nome')
         context_dict['msg'] = msg
         context_dict['tipo_msg'] = tipo_msg
-        return render(request, 'produtos.html', context_dict)
+        return render(request, template, context_dict)
 
     @classmethod
     def ListarProdutosAdmin(self, request):

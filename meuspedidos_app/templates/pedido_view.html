@@ -23,10 +23,10 @@
             </div>
 
             <div class="three wide column">
-                <button class="ui blue button">
+                <a href="{% url 'editar_pedido' pedido.id %}" class="ui blue button">
                     <i class="edit icon"></i>
                     Editar pedido
-                </button>
+                </a>
             </div>
 
             <div class="sixteen wide column meuspedidos-table-form">
@@ -71,20 +71,6 @@
                     </div>
                 </div>
             </div>
-
-
-            {#                    <br/>#}
-            {##}
-            {#                    <div class="sixteen wide column">#}
-            {#                        <div class="ui divider"></div>#}
-            {#                    </div>#}
-            {##}
-            {#                {% endfor %}#}
-            {#            {% else %}#}
-            {#                <div class="ui yellow message">#}
-            {#                    Você ainda não está em nenhum projeto.#}
-            {#                </div>#}
-            {#            {% endif %}#}
         </div>
     </div>
 

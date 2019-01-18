@@ -11,6 +11,8 @@ urlpatterns = [
     url(r'^contato/$', TemplateView.as_view(template_name='contato.html'), name='contato'),
 
     url(r'^novo_pedido/$', PedidoView.as_view(), name='novo_pedido'),
+    url(r'^editar_pedido/(?P<id>\d+)/$', ProdutoView.Listar, name='editar_pedido'),
+
     url(r'^produtos/$', ProdutoView.Listar, name='produtos'),
     url(r'^lista_produtos/$', ProdutoView.ListarProdutosAdmin, name='lista_produtos'),
     url(r'^add_remove_produto/$', ProdutoView.AdicionarRemoverProduto, name='add_remove_produto'),
