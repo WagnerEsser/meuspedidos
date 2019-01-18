@@ -35,6 +35,7 @@ class ProdutoView(View):
             else:
                 from decimal import Decimal
                 preco_pago = Decimal(preco_pago.replace(',', ''))
+
                 qtd = int(qtd)
 
                 if qtd % produto.multiplo == 0:
@@ -43,3 +44,13 @@ class ProdutoView(View):
                     return self.Listar(request, msg="A quantidade tem que obedecer o número Múltiplo!", tipo_msg="red")
 
         return self.Listar(request)
+
+    @classmethod
+    def remover_zeros_final(self, valor):  # EX: 12345.00
+        return int(str(valor)[:-3])
+
+    @classmethod
+    def remover_ponto_decimal(self, valor):  # EX: 123.45
+        valor = str(valor).split(".")
+        valor = ''.join(valor)
+        return int(valor)

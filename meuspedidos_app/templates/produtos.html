@@ -4,6 +4,7 @@
 {% load mostrar_qtd_a_comprar %}
 {% load mostrar_valor_a_pagar %}
 {% load mostrar_valor_total %}
+{% load verificar_rentabilidade %}
 
 {% block body %}
 
@@ -52,6 +53,7 @@
                                 <th>Preço a pagar</th>
                                 <th>Multiplo</th>
                                 <th>Quantidade</th>
+                                <th>Rentabilidade</th>
                                 <th><i class="cogs icon"></i> Ações</th>
                             </tr>
                             </thead>
@@ -86,6 +88,9 @@
                                             {% else %}
                                                 {{ produto.id|mostrar_qtd_a_comprar }}
                                             {% endif %}
+                                        </td>
+                                        <td>
+                                            {{ produto.id|verificar_rentabilidade }}
                                         </td>
                                         <td>
                                             {% if not produto.id|item_esta_no_pedido %}

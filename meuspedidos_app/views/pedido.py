@@ -49,6 +49,9 @@ class PedidoView(View):
         pedido = PedidoModel.objects.get(pk=id_pedido)
         produto = ProdutoModel.objects.get(pk=id_produto)
 
+        print(type(preco_pago))
+        print(preco_pago)
+
         item = ItemModel()
         item.pedido = pedido
         item.produto = produto
