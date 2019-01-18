@@ -52,11 +52,13 @@
                                 <td>{{ pedido.status|status_pedido }}</td>
                                 <td>
                                     {% if not pedido.status %}
-                                        <a href="{% url 'produtos' %}" class="ui primary button">
+                                        <a href="{% url 'produtos' %}" class="ui compact positive button">
                                             <i class="shop icon"></i> Continuar pedido
                                         </a>
                                     {% else %}
-                                        ---
+                                        <a href="{% url 'visualizar_pedido' pedido.id %}">
+                                            <i class="eye icon"></i> Visualizar
+                                        </a>
                                     {% endif %}
                                 </td>
                             </tr>

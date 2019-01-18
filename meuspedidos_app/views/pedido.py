@@ -12,6 +12,7 @@ from meuspedidos_app.views.funcoes import *
 class PedidoView(View):
     template = 'pedido.html'
     template_produtos = 'produtos.html'
+    template_view = 'pedido_view.html'
 
     def get(self, request):
         context_dict = {}
@@ -98,3 +99,19 @@ class PedidoView(View):
                 item.delete()
 
         return
+
+    @classmethod
+    def VisualizarPedido(self, request, id):
+        context_dict = {}
+
+        pedido = PedidoModel.objects.get(pk=id)
+        itens = ItemModel.objects.filter(pedido=id)
+
+        for i, item in enumerate(itens):
+            preco = str(item.preco * item.quantidade)[:-3]
+            preco = preco[:-2] + ',' + preco[-2:]
+            itens[i].valor_total = preco
+
+        context_dict['pedido'] = pedido
+        context_dict['itens'] = itens
+        return render(request, self.template_view, context_dict)

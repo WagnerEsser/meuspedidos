@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% load formatar_preco %}
+
+{% block body %}
+
+    <div class="ui centered grid meuspedidos-grid">
+        <div class="ui row segment meuspedidos-segment border-segment">
+
+            {% if msg %}
+                <div class="sixteen wide column meuspedidos-div-message">
+                    <div class="ui {{ tipo_msg }} message">
+                        <div class="header">
+                            {{ msg }}
+                        </div>
+                    </div>
+                    <br/>
+                </div>
+            {% endif %}
+
+            <div class="thirteen wide column">
+                <h1><i class="hashtag icon"></i> Pedido {{ pedido.id }}</h1>
+            </div>
+
+            <div class="three wide column">
+                <button class="ui blue button">
+                    <i class="edit icon"></i>
+                    Editar pedido
+                </button>
+            </div>
+
+            <div class="sixteen wide column meuspedidos-table-form">
+                <div class="ui grid">
+
+                    <div class="sixteen wide column">
+                        <p><i class="calendar icon"></i> <strong>Cadastrado em: </strong>
+                            {{ pedido.data }}</p>
+
+                        <p><i class="user icon"></i> <strong>Criado
+                            por: </strong>Jenifer
+                        </p>
+
+                        <p><i class="spy icon"></i> <strong>Cliente: </strong>{{ pedido.cliente }}
+                        </p>
+                    </div>
+
+                    <div class="sixteen wide column">
+                        <i class="list icon"></i> <strong>Itens</strong>
+                        <table class="ui celled table">
+                            <thead>
+                            <tr>
+                                <th>ID Item</th>
+                                <th>Quantidade</th>
+                                <th>Preço pago por unidade</th>
+                                <th>Valor total</th>
+                                <th>Produto</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            {% for item in itens %}
+                                <tr>
+                                    <td># {{ item.id }}</td>
+                                    <td>{{ item.quantidade }}</td>
+                                    <td>R$ {{ item.preco|formatar_preco }}</td>
+                                    <td>R$ {{ item.valor_total }}</td>
+                                    <td>{{ item.produto }}</td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+            {#                    <br/>#}
+            {##}
+            {#                    <div class="sixteen wide column">#}
+            {#                        <div class="ui divider"></div>#}
+            {#                    </div>#}
+            {##}
+            {#                {% endfor %}#}
+            {#            {% else %}#}
+            {#                <div class="ui yellow message">#}
+            {#                    Você ainda não está em nenhum projeto.#}
+            {#                </div>#}
+            {#            {% endif %}#}
+        </div>
+    </div>
+
+{% endblock %}

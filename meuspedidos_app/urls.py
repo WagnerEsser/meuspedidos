@@ -15,6 +15,7 @@ urlpatterns = [
     url(r'^lista_produtos/$', ProdutoView.ListarProdutosAdmin, name='lista_produtos'),
     url(r'^add_remove_produto/$', ProdutoView.AdicionarRemoverProduto, name='add_remove_produto'),
     url(r'^finalizar_pedido/$', PedidoView.FinalizarPedido, name='finalizar_pedido'),
+    url(r'^visualizar_pedido/(?P<id>\d+)/$', PedidoView.VisualizarPedido, name='visualizar_pedido'),
 
     # 404
     url(r'', TemplateView.as_view(template_name='404.html'), name='404'),
