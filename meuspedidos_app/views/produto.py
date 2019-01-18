@@ -62,6 +62,8 @@ class ProdutoView(View):
                     qtd = int(qtd)
 
                     if qtd % produto.multiplo == 0:
+                        if preco_pago.find(',') == -1:
+                            preco_pago = preco_pago + ',00'
                         preco_pago = Decimal(preco_pago.replace(',', ''))
                         PedidoView.adicionar_item(id_pedido, id_produto, preco_pago, qtd)
                         msg = "Item adicionado com sucesso."

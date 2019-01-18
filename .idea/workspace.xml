@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meuspedidos_app/templates/produtos.html" beforeDir="false" afterPath="$PROJECT_DIR$/meuspedidos_app/templates/produtos.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meuspedidos_app/views/produto.py" beforeDir="false" afterPath="$PROJECT_DIR$/meuspedidos_app/views/produto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/base.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,32 +56,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/meuspedidos_app/templates/produtos.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="39" column="52" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/meuspedidos_app/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="16" column="46" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/meuspedidos_app/views/produto.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="65" column="41" lean-forward="true" selection-start-line="65" selection-start-column="41" selection-end-line="65" selection-end-column="41" />
+            <state relative-caret-position="664">
+              <caret line="72" column="37" lean-forward="true" selection-start-line="72" selection-start-column="37" selection-end-line="72" selection-end-column="37" />
               <folding>
                 <element signature="e#15#50#0" expanded="true" />
               </folding>
@@ -141,7 +121,6 @@
         <option value="$PROJECT_DIR$/static/css/base.css" />
         <option value="$PROJECT_DIR$/meuspedidos_app/models/cliente.py" />
         <option value="$PROJECT_DIR$/meuspedidos_app/templates/404.html" />
-        <option value="$PROJECT_DIR$/static/js/base.js" />
         <option value="$PROJECT_DIR$/meuspedidos_app/templates/contato.html" />
         <option value="$PROJECT_DIR$/meuspedidos_app/admin.py" />
         <option value="$PROJECT_DIR$/meuspedidos_app/models/__init__.py" />
@@ -174,15 +153,16 @@
         <option value="$PROJECT_DIR$/meuspedidos_app/views/pedido.py" />
         <option value="$PROJECT_DIR$/meuspedidos_app/templatetags/mostrar_rentabilidade.py" />
         <option value="$PROJECT_DIR$/meuspedidos_app/templates/produtos.html" />
+        <option value="$PROJECT_DIR$/static/js/base.js" />
         <option value="$PROJECT_DIR$/meuspedidos_app/views/produto.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="67" />
-    <option name="y" value="-2" />
-    <option name="width" value="1533" />
-    <option name="height" value="902" />
+    <option name="y" value="25" />
+    <option name="width" value="1299" />
+    <option name="height" value="743" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -203,13 +183,13 @@
             <path>
               <item name="meuspedidos" type="b2602c69:ProjectViewProjectNode" />
               <item name="meuspedidos" type="462c0819:PsiDirectoryNode" />
-              <item name="meuspedidos_app" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="meuspedidos" type="b2602c69:ProjectViewProjectNode" />
               <item name="meuspedidos" type="462c0819:PsiDirectoryNode" />
-              <item name="meuspedidos_app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -339,7 +319,7 @@
       <workItem from="1547672840314" duration="33235000" />
       <workItem from="1547768473830" duration="5114000" />
       <workItem from="1547828066761" duration="12176000" />
-      <workItem from="1547843065088" duration="498000" />
+      <workItem from="1547843065088" duration="1962000" />
     </task>
     <task id="LOCAL-00001" summary="Add static files (semantic ui + images); initial structure.">
       <created>1547614107704</created>
@@ -425,11 +405,18 @@
       <option name="project" value="LOCAL" />
       <updated>1547839414319</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="validação de preço e quantidade do produto, maior que zero">
+      <created>1547843598360</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1547843598361</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63075000" />
+    <option name="totallyTimeSpent" value="64539000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -456,7 +443,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32858992" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32899022" />
-      <window_info anchor="bottom" id="manage.py@meuspedidos" order="9" weight="0.4136808" />
+      <window_info anchor="bottom" id="manage.py@meuspedidos" order="9" weight="0.5863192" />
       <window_info anchor="bottom" id="Database Changes" order="10" weight="0.32899022" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="12" weight="0.95114005" />
@@ -485,7 +472,8 @@
     <MESSAGE value="Correção bug status rentabilidade" />
     <MESSAGE value="Pedido ignorando itens não rentáveis." />
     <MESSAGE value="Não permitir finalizar pedido caso só existam itens não rentáveis." />
-    <option name="LAST_COMMIT_MESSAGE" value="Não permitir finalizar pedido caso só existam itens não rentáveis." />
+    <MESSAGE value="validação de preço e quantidade do produto, maior que zero" />
+    <option name="LAST_COMMIT_MESSAGE" value="validação de preço e quantidade do produto, maior que zero" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/static/js/jquery.min.js">
@@ -529,13 +517,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/images/logo.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/base.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
-        </state>
-      </provider>
     </entry>
     <entry file="das://e4917e60-b992-4f84-b6a6-1f48f2f56d60/schema/main/table/sqlite_master" />
     <entry file="file://$PROJECT_DIR$/meuspedidos_app/models/cliente.py">
@@ -801,23 +782,6 @@
       </provider>
     </entry>
     <entry file="das://e4917e60-b992-4f84-b6a6-1f48f2f56d60/schema/main/table/meuspedidos_app_itemmodel" />
-    <entry file="file://$PROJECT_DIR$/meuspedidos_app/templates/produtos.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="52" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/meuspedidos_app/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="16" column="46" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/meuspedidos_app/views/pedido.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
@@ -828,10 +792,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/base.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="203" lean-forward="true" selection-start-line="4" selection-start-column="203" selection-end-line="4" selection-end-column="203" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meuspedidos_app/templates/produtos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="94" column="80" selection-start-line="94" selection-start-column="80" selection-end-line="94" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meuspedidos_app/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="46" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/meuspedidos_app/views/produto.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="65" column="41" lean-forward="true" selection-start-line="65" selection-start-column="41" selection-end-line="65" selection-end-column="41" />
+        <state relative-caret-position="664">
+          <caret line="72" column="37" lean-forward="true" selection-start-line="72" selection-start-column="37" selection-end-line="72" selection-end-column="37" />
           <folding>
             <element signature="e#15#50#0" expanded="true" />
           </folding>

@@ -80,7 +80,7 @@
                                     <td>{{ produto.preco_unitario }}</td>
                                     <td>
                                         {% if not produto.id|item_esta_no_pedido %}
-                                            <div class="ui input">
+                                            <div class="ui input valor">
                                                 <input type="text" name="preco_pago"
                                                        value="{{ produto.preco_unitario }}"/>
                                             </div>
@@ -92,7 +92,7 @@
                                     <td>{{ produto.multiplo }}</td>
                                     <td>
                                         {% if not produto.id|item_esta_no_pedido %}
-                                            <div class="ui input">
+                                            <div class="ui input somente_numeros">
                                                 <input type="text" name="qtd" value="1"/>
                                             </div>
                                         {% else %}
