@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0f7f5dd-359c-4dd8-878a-7ed55832aab6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/meuspedidos_app/templatetags/mostrar_rentabilidade.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/meuspedidos_app/views/funcoes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meuspedidos_app/templates/produtos.html" beforeDir="false" afterPath="$PROJECT_DIR$/meuspedidos_app/templates/produtos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meuspedidos_app/templatetags/verificar_rentabilidade.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/meuspedidos_app/views/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/meuspedidos_app/views/index.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meuspedidos_app/views/pedido.py" beforeDir="false" afterPath="$PROJECT_DIR$/meuspedidos_app/views/pedido.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meuspedidos_app/views/produto.py" beforeDir="false" afterPath="$PROJECT_DIR$/meuspedidos_app/views/produto.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -63,17 +58,41 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/meuspedidos_app/templates/produtos.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="101" column="91" lean-forward="true" selection-start-line="101" selection-start-column="91" selection-end-line="101" selection-end-column="91" />
+            <state relative-caret-position="663">
+              <caret line="39" column="52" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/meuspedidos_app/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="16" column="46" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/meuspedidos_app/views/produto.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="273">
+              <caret line="65" column="41" lean-forward="true" selection-start-line="65" selection-start-column="41" selection-end-line="65" selection-end-column="41" />
+              <folding>
+                <element signature="e#15#50#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/meuspedidos_app/views/pedido.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="664">
-              <caret line="94" column="43" lean-forward="true" selection-start-line="94" selection-start-column="43" selection-end-line="94" selection-end-column="43" />
+            <state relative-caret-position="714">
+              <caret line="49" selection-start-line="49" selection-end-line="49" />
               <folding>
                 <element signature="e#15#59#0" expanded="true" />
               </folding>
@@ -92,6 +111,7 @@
       <find>print</find>
       <find>preco_unitario</find>
       <find>verificar_rentabilidade</find>
+      <find>Adicionar</find>
     </findStrings>
     <replaceStrings>
       <replace>meuspedidos</replace>
@@ -149,12 +169,12 @@
         <option value="$PROJECT_DIR$/meuspedidos_app/models/item.py" />
         <option value="$PROJECT_DIR$/meuspedidos_app/views/index.py" />
         <option value="$PROJECT_DIR$/meuspedidos_app/views/item.py" />
-        <option value="$PROJECT_DIR$/meuspedidos_app/views/produto.py" />
-        <option value="$PROJECT_DIR$/meuspedidos_app/templates/produtos.html" />
         <option value="$PROJECT_DIR$/meuspedidos_app/templatetags/verificar_rentabilidade.py" />
         <option value="$PROJECT_DIR$/meuspedidos_app/views/funcoes.py" />
-        <option value="$PROJECT_DIR$/meuspedidos_app/templatetags/mostrar_rentabilidade.py" />
         <option value="$PROJECT_DIR$/meuspedidos_app/views/pedido.py" />
+        <option value="$PROJECT_DIR$/meuspedidos_app/templatetags/mostrar_rentabilidade.py" />
+        <option value="$PROJECT_DIR$/meuspedidos_app/templates/produtos.html" />
+        <option value="$PROJECT_DIR$/meuspedidos_app/views/produto.py" />
       </list>
     </option>
   </component>
@@ -172,6 +192,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -188,25 +209,12 @@
               <item name="meuspedidos" type="b2602c69:ProjectViewProjectNode" />
               <item name="meuspedidos" type="462c0819:PsiDirectoryNode" />
               <item name="meuspedidos_app" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="meuspedidos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="meuspedidos" type="462c0819:PsiDirectoryNode" />
-              <item name="meuspedidos_app" type="462c0819:PsiDirectoryNode" />
-              <item name="templatetags" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="meuspedidos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="meuspedidos" type="462c0819:PsiDirectoryNode" />
-              <item name="meuspedidos_app" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -330,7 +338,8 @@
       <workItem from="1547611650424" duration="9883000" />
       <workItem from="1547672840314" duration="33235000" />
       <workItem from="1547768473830" duration="5114000" />
-      <workItem from="1547828066761" duration="7407000" />
+      <workItem from="1547828066761" duration="12176000" />
+      <workItem from="1547843065088" duration="498000" />
     </task>
     <task id="LOCAL-00001" summary="Add static files (semantic ui + images); initial structure.">
       <created>1547614107704</created>
@@ -402,11 +411,25 @@
       <option name="project" value="LOCAL" />
       <updated>1547829718763</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Pedido ignorando itens não rentáveis.">
+      <created>1547835683320</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1547835683320</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Não permitir finalizar pedido caso só existam itens não rentáveis.">
+      <created>1547839414319</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1547839414319</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57808000" />
+    <option name="totallyTimeSpent" value="63075000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -421,7 +444,7 @@
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" x="697" y="1015" width="299" height="614" id="Project" order="0" visible="true" weight="0.207502" />
+      <window_info content_ui="combo" x="697" y="1015" width="299" height="614" id="Project" order="0" visible="true" weight="0.21069433" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -433,7 +456,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32858992" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32899022" />
-      <window_info anchor="bottom" id="manage.py@meuspedidos" order="9" weight="0.36482084" />
+      <window_info anchor="bottom" id="manage.py@meuspedidos" order="9" weight="0.4136808" />
       <window_info anchor="bottom" id="Database Changes" order="10" weight="0.32899022" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="12" weight="0.95114005" />
@@ -443,7 +466,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" weight="0.32960895" />
-      <window_info anchor="right" id="Database" order="4" weight="0.32801276" />
+      <window_info anchor="right" id="Database" order="4" weight="0.24581006" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -460,7 +483,9 @@
     <MESSAGE value="Adionado funcionalidade número múltiplo" />
     <MESSAGE value="status da rentabilidade na lista de produtos" />
     <MESSAGE value="Correção bug status rentabilidade" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correção bug status rentabilidade" />
+    <MESSAGE value="Pedido ignorando itens não rentáveis." />
+    <MESSAGE value="Não permitir finalizar pedido caso só existam itens não rentáveis." />
+    <option name="LAST_COMMIT_MESSAGE" value="Não permitir finalizar pedido caso só existam itens não rentáveis." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/static/js/jquery.min.js">
@@ -537,13 +562,6 @@
           <folding>
             <element signature="e#0#55#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/populate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -646,20 +664,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://e4917e60-b992-4f84-b6a6-1f48f2f56d60/schema/main/table/meuspedidos_app_produtomodel">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/meuspedidos_app/models/produto.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/meuspedidos_app/models/pedido.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -700,13 +704,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://e4917e60-b992-4f84-b6a6-1f48f2f56d60/schema/main/table/meuspedidos_app_itemmodel.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://e4917e60-b992-4f84-b6a6-1f48f2f56d60/schema/main/table/meuspedidos_app_itemmodel.sql" />
     <entry file="file://$PROJECT_DIR$/meuspedidos_app/templatetags/mostrar_qtd_a_comprar.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -735,16 +733,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/meuspedidos_app/models/item.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="37" lean-forward="true" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
-          <folding>
-            <element signature="e#16#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/meuspedidos_app/views/index.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -762,16 +750,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/meuspedidos_app/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="47" lean-forward="true" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/meus_pedidos/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -779,27 +757,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/meuspedidos_app/views/produto.py">
+    <entry file="das://e4917e60-b992-4f84-b6a6-1f48f2f56d60/schema/main/table/meuspedidos_app_pedidomodel" />
+    <entry file="file://$PROJECT_DIR$/meuspedidos_app/models/item.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
+        <state relative-caret-position="123">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
           <folding>
-            <element signature="e#15#50#0" expanded="true" />
+            <element signature="e#16#44#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/meuspedidos_app/templates/produtos.html">
+    <entry file="das://e4917e60-b992-4f84-b6a6-1f48f2f56d60/schema/main/table/meuspedidos_app_produtomodel" />
+    <entry file="file://$PROJECT_DIR$/meuspedidos_app/models/produto.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="101" column="91" lean-forward="true" selection-start-line="101" selection-start-column="91" selection-end-line="101" selection-end-column="91" />
+        <state relative-caret-position="68">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/populate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="35" column="20" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/meuspedidos_app/templatetags/mostrar_rentabilidade.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
+        <state relative-caret-position="52">
+          <caret line="19" column="52" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
           </folding>
@@ -808,31 +795,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/meuspedidos_app/views/funcoes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-155">
-          <caret column="14" selection-start-column="14" selection-end-column="14" />
+        <state relative-caret-position="357">
+          <caret line="21" column="14" lean-forward="true" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="das://e4917e60-b992-4f84-b6a6-1f48f2f56d60/schema/main/table/meuspedidos_app_pedidomodel">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    <entry file="das://e4917e60-b992-4f84-b6a6-1f48f2f56d60/schema/main/table/meuspedidos_app_itemmodel" />
+    <entry file="file://$PROJECT_DIR$/meuspedidos_app/templates/produtos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" column="52" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
         </state>
       </provider>
     </entry>
-    <entry file="das://e4917e60-b992-4f84-b6a6-1f48f2f56d60/schema/main/table/meuspedidos_app_itemmodel">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    <entry file="file://$PROJECT_DIR$/meuspedidos_app/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="16" column="46" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/meuspedidos_app/views/pedido.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="664">
-          <caret line="94" column="43" lean-forward="true" selection-start-line="94" selection-start-column="43" selection-end-line="94" selection-end-column="43" />
+        <state relative-caret-position="714">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
           <folding>
             <element signature="e#15#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meuspedidos_app/views/produto.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="65" column="41" lean-forward="true" selection-start-line="65" selection-start-column="41" selection-end-line="65" selection-end-column="41" />
+          <folding>
+            <element signature="e#15#50#0" expanded="true" />
           </folding>
         </state>
       </provider>

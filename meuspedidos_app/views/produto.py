@@ -1,6 +1,8 @@
 # coding:utf-8
 from django.shortcuts import render
 from django.views import View
+from decimal import Decimal
+
 from meuspedidos_app.models import ProdutoModel, ItemModel
 from meuspedidos_app.views.funcoes import verificar_rentabilidade, remover_ponto_decimal, remover_zeros_final
 from meuspedidos_app.views.pedido import PedidoView
@@ -43,21 +45,24 @@ class ProdutoView(View):
             id_produto = request.POST.get('id_produto')
             produto = ProdutoModel.objects.get(pk=id_produto)
             qtd = request.POST.get('qtd')
+            preco_pago = request.POST.get('preco_pago')
 
-            if qtd and int(qtd) <= 0:
-                msg = "Quantidade inválida"
-                tipo_msg = "red"
+            if ItemModel.objects.filter(pedido=id_pedido, produto=id_produto):
+                PedidoView.remover_item(id_pedido, id_produto)
+                msg = "Item removido com sucesso."
+                tipo_msg = "green"
             else:
-                if ItemModel.objects.filter(pedido=id_pedido, produto=id_produto):
-                    PedidoView.remover_item(id_pedido, id_produto)
+                if not qtd or not preco_pago:
+                    msg = "Os campos quantidade e preço devem ser preenchidos para adicionar um pedido"
+                    tipo_msg = "red"
+                elif int(qtd) <= 0 or Decimal(preco_pago.replace(',', '')) <= 0:
+                    msg = "A quantidade e o preço devem ser maior que zero"
+                    tipo_msg = "red"
                 else:
-                    preco_pago = request.POST.get('preco_pago')
-                    from decimal import Decimal
-                    preco_pago = Decimal(preco_pago.replace(',', ''))
-
                     qtd = int(qtd)
 
                     if qtd % produto.multiplo == 0:
+                        preco_pago = Decimal(preco_pago.replace(',', ''))
                         PedidoView.adicionar_item(id_pedido, id_produto, preco_pago, qtd)
                         msg = "Item adicionado com sucesso."
                         tipo_msg = "green"

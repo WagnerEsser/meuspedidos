@@ -37,8 +37,8 @@
                     </div>
 
                     <div class="three wide column">
-                        <a class="ui green button {% if not existe_item_pedido %}disabled"{% endif %}
-                           href="{% url 'finalizar_pedido' %}">
+                        <a href="{% url 'finalizar_pedido' %}"
+                           class="ui green button {% if not existe_item_pedido %}disabled{% endif %}">
                             <i class="ui shopping basket icon"></i> Finalizar pedido
                         </a>
                     </div>
