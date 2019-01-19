@@ -7,6 +7,8 @@ __Linguagem:__ Python
 
 __Framework:__ Django 2.1.5 + Semantic UI
 
+__Servidor online:__ http://wagneresser.pythonanywhere.com/
+
 ## Instalação:
 
 1. Clone o repositório: https://github.com/WagnerEsser/meuspedidos.git
