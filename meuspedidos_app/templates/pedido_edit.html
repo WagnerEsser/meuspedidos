@@ -15,21 +15,11 @@
 
                 {% include "blocos/mensagem_topo_pagina.html" %}
 
-                {#                {% if not request.session.pedido %}#}
-                {#                    <div class="sixteen wide column issem-div-message center aligned">#}
-                {#                        <div class="ui warning message">#}
-                {#                            <div class="header">#}
-                {#                                Não existe pedido em andamento!#}
-                {#                            </div>#}
-                {#                        </div>#}
-                {#                        <br/>#}
-                {#                    </div>#}
-                {#                {% else %}#}
                 <div class="three wide column"></div>
 
                 <div class="ten wide column">
                     <div class="meuspedidos-title-edit-page">
-                        <h1><i class="edit icon"></i> Edição do pedido # {{ pedido.id }}</h1>
+                        <h1><i class="edit icon"></i> Edição do pedido # {{ request.session.pedido_edit }}</h1>
 
                         <h3>
                             <i class="ui user icon"></i>
@@ -40,7 +30,7 @@
 
                 <div class="three wide column">
                     <a href="{% url 'finalizar_pedido' %}"
-                       class="ui green button">
+                       class="ui green button {% if not existe_item_pedido %}disabled{% endif %}">
                         <i class="ui check icon"></i> Salvar pedido
                     </a>
                 </div>
@@ -73,64 +63,64 @@
 
                             {% if produto.id|mostrar_rentabilidade == "Ruim" %}
                                 <tr class="negative">
-                            {% else %}
+                                    {% else %}
                                 <tr>
                             {% endif %}
 
                             <td>{{ produto.id }}</td>
                             <td>{{ produto.nome }}</td>
                             <td>{{ produto.preco_unitario }}</td>
-{#                            <td>#}
-{#                                {% if not produto.id|item_esta_no_pedido %}#}
-{#                                    <div class="ui input valor">#}
-{#                                        <input type="text" name="preco_pago"#}
-{#                                               value="{{ produto.preco_unitario }}"/>#}
-{#                                    </div>#}
-{#                                {% else %}#}
-{#                                    {{ produto.id|mostrar_valor_a_pagar }}#}
-{#                                    | Total: <strong>{{ produto.id|mostrar_valor_total }}</strong>#}
-{#                                {% endif %}#}
-{#                            </td>#}
-{#                            <td>{{ produto.multiplo }}</td>#}
-{#                            <td>#}
-{#                                {% if not produto.id|item_esta_no_pedido %}#}
-{#                                    <div class="ui input somente_numeros">#}
-{#                                        <input type="text" name="qtd" value="1"/>#}
-{#                                    </div>#}
-{#                                {% else %}#}
-{#                                    {{ produto.id|mostrar_qtd_a_comprar }}#}
-{#                                {% endif %}#}
-{#                            </td>#}
-{#                            <td>#}
-{#                                {% if produto.id|mostrar_rentabilidade == "Ruim" %}#}
-{#                                    <span class="ui red label">#}
-{#                                                                                                    {{ produto.id|mostrar_rentabilidade }}#}
-{#                                                                                                </span>#}
-{#                                {% elif produto.id|mostrar_rentabilidade == "Boa" %}#}
-{#                                    <span class="ui blue label">#}
-{#                                                                                                    {{ produto.id|mostrar_rentabilidade }}#}
-{#                                                                                                </span>#}
-{#                                {% elif produto.id|mostrar_rentabilidade == "Ótima" %}#}
-{#                                    <span class="ui green label">#}
-{#                                                                                                    {{ produto.id|mostrar_rentabilidade }}#}
-{#                                                                                                </span>#}
-{#                                {% else %}#}
-{#                                    {{ produto.id|mostrar_rentabilidade }}#}
-{#                                {% endif %}#}
-{#                            </td>#}
-{#                            <td>#}
-{#                                {% if not produto.id|item_esta_no_pedido %}#}
-{#                                    <button type="submit" class="ui labeled icon primary button">#}
-{#                                        <i class="shop icon"></i>#}
-{#                                        Adicionar#}
-{#                                    </button>#}
-{#                                {% else %}#}
-{#                                    <button type="submit" class="ui labeled icon button">#}
-{#                                        <i class="trash icon"></i>#}
-{#                                        Remover#}
-{#                                    </button>#}
-{#                                {% endif %}#}
-{#                            </td>#}
+                            <td>
+                                {% if not produto.id|item_esta_no_pedido %}
+                                    <div class="ui input valor">
+                                        <input type="text" name="preco_pago"
+                                               value="{{ produto.preco_unitario }}"/>
+                                    </div>
+                                {% else %}
+                                    {{ produto.id|mostrar_valor_a_pagar }}
+                                    | Total: <strong>{{ produto.id|mostrar_valor_total }}</strong>
+                                {% endif %}
+                            </td>
+                            <td>{{ produto.multiplo }}</td>
+                            <td>
+                                {% if not produto.id|item_esta_no_pedido %}
+                                    <div class="ui input somente_numeros">
+                                        <input type="text" name="qtd" value="1"/>
+                                    </div>
+                                {% else %}
+                                    {{ produto.id|mostrar_qtd_a_comprar }}
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if produto.id|mostrar_rentabilidade == "Ruim" %}
+                                    <span class="ui red label">
+                                                                                                                                {{ produto.id|mostrar_rentabilidade }}
+                                                                                                                            </span>
+                                {% elif produto.id|mostrar_rentabilidade == "Boa" %}
+                                    <span class="ui blue label">
+                                                                                                                                {{ produto.id|mostrar_rentabilidade }}
+                                                                                                                            </span>
+                                {% elif produto.id|mostrar_rentabilidade == "Ótima" %}
+                                    <span class="ui green label">
+                                                                                                                                {{ produto.id|mostrar_rentabilidade }}
+                                                                                                                            </span>
+                                {% else %}
+                                    {{ produto.id|mostrar_rentabilidade }}
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if not produto.id|item_esta_no_pedido %}
+                                    <button type="submit" class="ui labeled icon primary button">
+                                        <i class="shop icon"></i>
+                                        Adicionar
+                                    </button>
+                                {% else %}
+                                    <button type="submit" class="ui labeled icon button">
+                                        <i class="trash icon"></i>
+                                        Remover
+                                    </button>
+                                {% endif %}
+                            </td>
                             </tr>
                         </form>
                     {% endfor %}

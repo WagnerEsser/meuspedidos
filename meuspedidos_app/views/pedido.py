@@ -22,6 +22,12 @@ class PedidoView(View):
             del request.session['pedido']
             PedidoModel.objects.filter(status=False).delete()
 
+        if request.session and 'pedido_edit' in request.session:
+            pedido = PedidoModel.objects.get(pk=request.session['pedido_edit'])
+            pedido.status = True
+            pedido.save()
+            del request.session['pedido_edit']
+
         form = PedidoCadForm()
         context_dict['form'] = form
         return render(request, self.template, context_dict)
@@ -69,17 +75,32 @@ class PedidoView(View):
 
     @classmethod
     def FinalizarPedido(self, request):
-        if request.session and 'pedido' in request.session:
-            id_pedido = request.session['pedido']
-            pedido = PedidoModel.objects.get(pk=id_pedido)
+        if request.session:
+            if 'pedido' in request.session:
+                id_pedido = request.session['pedido']
+            elif 'pedido_edit' in request.session:
+                id_pedido = request.session['pedido_edit']
+            else:
+                id_pedido = None
 
-            self.remover_itens_nao_rentaveis(id_pedido)
+            if id_pedido:
+                pedido = PedidoModel.objects.get(pk=id_pedido)
 
-            pedido.status = True
-            pedido.save()
-            del request.session['pedido']
-            msg = "Pedido realizado com sucesso"
-            tipo_msg = "green"
+                self.remover_itens_nao_rentaveis(id_pedido)
+
+                pedido.status = True
+                pedido.save()
+
+                if 'pedido' in request.session:
+                    del request.session['pedido']
+                elif 'pedido_edit' in request.session:
+                    del request.session['pedido_edit']
+
+                msg = "Pedido realizado com sucesso"
+                tipo_msg = "green"
+            else:
+                msg = "Algo deu errado, tente novamente!"
+                tipo_msg = "red"
         else:
             msg = "Algo deu errado, tente novamente!"
             tipo_msg = "red"
