@@ -18,6 +18,10 @@ __Framework:__ Django 2.1.5 + Semantic UI
 
 `python manage.py migrate`
 
-5. Rode o servidor:
+5. População do banco de dados:
+
+`python populate.py`
+
+6. Rode o servidor:
 
 `python manage.py runserver`
